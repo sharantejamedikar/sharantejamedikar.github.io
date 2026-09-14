@@ -19,3 +19,10 @@
 .cv-unavailable{color:var(--muted);border-bottom-style:dashed;cursor:default}
 @media(max-width:900px){.nav-links a{min-height:44px;display:flex;align-items:center}.hero h1{margin:5rem 0 4rem}}
 @media(max-width:600px){.hero h1{margin:4.25rem 0 3.5rem}}
+
+/* Recruiter-proof evidence treatments */
+.benchmark-proof{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem;margin-top:1.4rem;border:1px solid #59615b;background:#1a201df2;padding:.8rem 1rem;font:.58rem var(--font-geist-mono);color:#a3aaa5;text-transform:uppercase}
+.benchmark-proof span:last-child{text-align:right}.benchmark-proof strong{font-size:.9rem;color:var(--white)}.benchmark-proof i{font-style:normal;color:var(--acid)}
+.experience-evidence{list-style:none;padding:0;margin:0;max-width:680px}.experience-evidence li{border-top:1px solid var(--line);padding:.8rem 0 .8rem 1.4rem;position:relative;line-height:1.55;color:var(--muted);font-size:.88rem}.experience-evidence li:before{content:"→";position:absolute;left:0;color:#627f00}
+.education-detail{font-size:.82rem;line-height:1.5;margin-top:.75rem}
+.system-path{display:flex;align-items:center;gap:.55rem;flex-wrap:wrap;margin:1rem 0 1.5rem;padding-top:1rem;border-top:1px solid #a8c626;font:.56rem var(--font-geist-mono);text-transform:uppercase;color:#49520f}.system-path i{font-style:normal}.system-path strong{font-weight:700;color:var(--ink)}
