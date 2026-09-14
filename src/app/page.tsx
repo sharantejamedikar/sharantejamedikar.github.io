@@ -1,69 +1,10 @@
-import Image from "next/image";
-
-export default function Home() {
-  return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
-}
+import Link from "next/link"; import {projects} from "@/data/projects"; import {Arrow} from "@/components/icons"; import {FlowDiagram} from "@/components/diagram"; import {Footer} from "@/components/footer";
+const capabilities=[["01","LLM Systems",["LLM evaluation","Agents","Execution feedback","Structured generation","Prompt engineering","RAG · working knowledge"]],["02","Machine Learning",["PyTorch","Deep learning","Experimentation","Evaluation","Optimisation","scikit-learn"]],["03","Vision & Multimodal",["CLIP","Vision-language models","Prompt learning","LoRA","Transfer learning","Computer vision"]],["04","AI Engineering",["Python · APIs · SQL","Testing · Git · Linux","Docker · familiarity","Persistent systems","Human-in-the-loop","Local inference"]]];
+export default function Home(){const[flagship,second,third,...rest]=projects;return <><main id="top">
+<section className="hero shell"><div className="hero-kicker"><span>AI Engineer</span><span>London · UK</span><span className="status">Open to opportunities</span></div><h1><span>SHARAN TEJA</span><span className="outline">MEDIKAR</span></h1><div className="hero-bottom"><p className="hero-statement">Building reliable AI systems<br/>from <em>models</em> to deployment.</p><div className="hero-copy"><p>Early-career AI engineer with an MSc in Artificial Intelligence from the University of Surrey. I work across LLM systems, machine learning, multimodal AI and agents—turning experiments into dependable software.</p><p className="work-right">Currently have the right to work in the UK.</p><div className="hero-actions"><a className="button primary" href="#work">Selected work <Arrow/></a><a className="text-link" href="https://github.com/sharantejamedikar" target="_blank" rel="noreferrer">GitHub <Arrow diagonal/></a><a className="text-link" href="https://www.linkedin.com/in/sharanteja" target="_blank" rel="noreferrer">LinkedIn <Arrow diagonal/></a><a className="text-link" href="/cv/sharan-teja-medikar-cv.pdf">CV <Arrow diagonal/></a></div></div></div><div className="hero-grid" aria-hidden="true">{Array.from({length:6}).map((_,i)=><span key={i}/>)}</div></section>
+<section id="work" className="section shell"><div className="section-head"><p className="eyebrow">Selected work / 01—05</p><h2>Evidence over<br/><em>assertion.</em></h2><p>Research, product engineering and operational systems—each examined through decisions, constraints and measurable outcomes.</p></div><article className="feature-card"><div className="feature-copy"><div className="project-meta"><span>{flagship.index}</span><span>{flagship.category}</span><span>{flagship.year}</span></div><h3>{flagship.title}</h3><p>{flagship.summary}</p><div className="metric"><strong>{flagship.metric}</strong><span>{flagship.metricLabel}</span></div><div className="tag-row">{flagship.tech.slice(0,5).map(t=><span key={t}>{t}</span>)}</div><Link className="case-link" href={`/work/${flagship.slug}`}>Explore case study <Arrow/></Link></div><div className="feature-visual"><p className="visual-label">Adaptive refinement loop</p><FlowDiagram steps={flagship.architecture}/><div className="code-note"><span>feedback.policy</span><code>refine if failure is recoverable<br/>stop if tests pass or budget ends</code></div></div></article>
+<div className="duo-grid">{[second,third].map((p,i)=><article className={`project-panel panel-${i+1}`} key={p.slug}><div className="project-meta"><span>{p.index}</span><span>{p.category}</span></div><h3>{p.shortTitle}</h3><p>{p.summary}</p><div className="panel-bottom"><div className="metric small"><strong>{p.metric}</strong><span>{p.metricLabel}</span></div><Link className="circle-link" href={`/work/${p.slug}`} aria-label={`Read ${p.title} case study`}><Arrow/></Link></div></article>)}</div><div className="project-rows">{rest.map(p=><Link href={`/work/${p.slug}`} className="project-row" key={p.slug}><span className="row-index">{p.index}</span><div><p>{p.category}</p><h3>{p.shortTitle}</h3></div><div className="row-metric"><strong>{p.metric}</strong><span>{p.metricLabel}</span></div><span className="row-arrow"><Arrow/></span></Link>)}</div></section>
+<section id="capabilities" className="section capabilities"><div className="shell"><div className="section-head inverse"><p className="eyebrow">Capabilities / Systems thinking</p><h2>Across the<br/><em>full loop.</em></h2><p>I’m most useful where model behaviour meets engineering reality: evaluation, integration, failure modes and the user experience around AI.</p></div><div className="cap-grid">{capabilities.map(([n,title,items])=><div className="cap" key={String(title)}><span>{String(n)}</span><h3>{String(title)}</h3><ul>{(items as string[]).map(i=><li key={i}>{i}</li>)}</ul></div>)}</div></div></section>
+<section id="experience" className="section shell"><div className="split-title"><p className="eyebrow">Experience / Ownership</p><h2>Built with<br/><em>accountability.</em></h2></div><div className="timeline"><article><div><span>2023—2024</span><span>Assam, India</span></div><div><h3>Founder & Technical Lead</h3><p className="org">Police Night Patrolling System</p><p>Originated the product, secured stakeholder approval, assembled a five-person team and led development through UAT and handover. The resulting system supported 30 patrol vehicles and 60+ operational users.</p></div></article><article><div><span>Engineering internship</span><span>India</span></div><div><h3>Software Engineering Intern</h3><p className="org">Fleckor Tech</p><p>Built frontend and backend components across 3+ core features, integrated APIs, resolved approximately 15–20 bugs and supported deployment preparation.</p></div></article></div></section>
+<section id="education" className="section shell education"><div className="split-title"><p className="eyebrow">Education / Foundation</p><h2>Rigour meets<br/><em>practice.</em></h2></div><div className="education-list"><article><span>Sep 2025 — Sep 2026</span><div><h3>MSc Artificial Intelligence</h3><p>University of Surrey · Result pending</p></div></article><article><span>Jun 2021 — May 2025</span><div><h3>BTech Computer Science & Engineering</h3><p>National Institute of Technology Silchar</p></div></article></div></section>
+<section id="contact" className="contact"><div className="shell"><p className="eyebrow">Contact / Start a conversation</p><h2>Building something<br/><em>that needs to work?</em></h2><p>I’m open to AI engineering opportunities and thoughtful conversations about reliable, applied AI.</p><a className="contact-email" href="mailto:medikarsharanteja@gmail.com">medikarsharanteja@gmail.com <Arrow diagonal/></a><div className="contact-links"><a href="https://www.linkedin.com/in/sharanteja" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://github.com/sharantejamedikar" target="_blank" rel="noreferrer">GitHub ↗</a></div></div></section></main><Footer/></>}

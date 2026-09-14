@@ -1,0 +1,1 @@
+export function FlowDiagram({steps,compact=false}:{steps:string[];compact?:boolean}){return <div className={compact?"flow compact":"flow"} aria-label={`System flow: ${steps.join(", then ")}`}>{steps.map((step,i)=><div className="flow-step" key={step}><span>{String(i+1).padStart(2,"0")}</span><strong>{step}</strong>{i<steps.length-1&&<i aria-hidden="true">→</i>}</div>)}</div>}
