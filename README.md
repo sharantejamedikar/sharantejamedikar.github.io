@@ -23,6 +23,6 @@ The production build has no required environment variables or external runtime s
 
 ## Content notes
 
-- Add the approved final CV at `public/cv/sharan-teja-medikar-cv.pdf`, then replace the disabled “CV · coming soon” label in `src/app/page.tsx` with a link to that path. The directory contains a placeholder note only.
+- The approved general AI Engineering CV is served at `public/cv/sharan-teja-medikar-cv.pdf`.
 - Add repository or demo links only after confirming they are public and safe to share.
 - Set a canonical production URL during deployment; no portfolio domain is assumed.

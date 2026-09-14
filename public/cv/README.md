@@ -1,3 +1,3 @@
-# CV placeholder
+# Public CV
 
-Add the final CV here as `sharan-teja-medikar-cv.pdf`. The portfolio CTA already points to that stable path. A historical CV was intentionally not copied into this repository.
+`sharan-teja-medikar-cv.pdf` is the approved general AI Engineering CV served by the portfolio.
