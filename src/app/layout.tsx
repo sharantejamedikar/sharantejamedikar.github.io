@@ -3,6 +3,8 @@ import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/nav";
 
+const siteUrl = "https://portfolio-mu-roan-71.vercel.app";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -15,11 +17,13 @@ const geistMono = Geist_Mono({
 const instrument = Instrument_Serif({ variable: "--font-serif", subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: { default: "Sharan Teja Medikar — AI Engineer", template: "%s — Sharan Teja Medikar" },
   description: "AI Engineer specialising in LLM systems, machine learning, computer vision and applied AI.",
   keywords: ["AI Engineer", "LLM systems", "Machine Learning", "Computer Vision"],
   authors: [{ name: "Sharan Teja Medikar" }],
-  openGraph: { title: "Sharan Teja Medikar — AI Engineer", description: "Reliable AI systems, from models to deployment.", type: "website", locale: "en_GB" },
+  alternates: { canonical: "/" },
+  openGraph: { title: "Sharan Teja Medikar — AI Engineer", description: "Reliable AI systems, from models to deployment.", url: "/", siteName: "Sharan Teja Medikar", type: "website", locale: "en_GB" },
   twitter: { card: "summary_large_image", title: "Sharan Teja Medikar — AI Engineer", description: "Reliable AI systems, from models to deployment." },
   robots: { index: true, follow: true },
 };
