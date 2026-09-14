@@ -19,8 +19,10 @@ npx tsc --noEmit
 npm run build
 ```
 
+The production build has no required environment variables or external runtime services. Deploy to any Next.js-compatible Node.js host with `npm ci && npm run build`, then `npm start`. Set canonical and site URLs only after a production domain is confirmed.
+
 ## Content notes
 
-- Replace `public/cv/sharan-teja-medikar-cv.pdf` with the approved final CV. The directory contains a placeholder note only.
+- Add the approved final CV at `public/cv/sharan-teja-medikar-cv.pdf`, then replace the disabled “CV · coming soon” label in `src/app/page.tsx` with a link to that path. The directory contains a placeholder note only.
 - Add repository or demo links only after confirming they are public and safe to share.
-- Set a canonical production URL and Open Graph image during deployment; no portfolio domain is assumed in V1.
+- Set a canonical production URL during deployment; no portfolio domain is assumed.
