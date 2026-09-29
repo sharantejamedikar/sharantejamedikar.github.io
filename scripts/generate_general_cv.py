@@ -5,11 +5,15 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 from pathlib import Path
 
 
-JOB_AGENT = Path("/Users/thesharantejagmail.com/Documents/Jobs/ai-job-agent")
+job_agent_root = os.environ.get("JOB_AGENT_ROOT")
+if not job_agent_root:
+    raise SystemExit("Set JOB_AGENT_ROOT to the local ai-job-agent checkout before running this helper.")
+JOB_AGENT = Path(job_agent_root).expanduser().resolve()
 sys.path.insert(0, str(JOB_AGENT / "src"))
 
 from jobagent.candidate import load_candidate  # noqa: E402

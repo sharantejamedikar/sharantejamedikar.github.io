@@ -1,3 +1,4 @@
 import type { MetadataRoute } from "next";
-const siteUrl = "https://portfolio-mu-roan-71.vercel.app";
+const siteUrl = "https://sharantejamedikar.github.io";
+export const dynamic = "force-static";
 export default function robots(): MetadataRoute.Robots{return{rules:{userAgent:"*",allow:"/"},sitemap:`${siteUrl}/sitemap.xml`,host:siteUrl}}

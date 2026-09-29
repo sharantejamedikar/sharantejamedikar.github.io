@@ -1,6 +1,6 @@
 # Sharan Teja Medikar — AI Engineer Portfolio
 
-A static, editorial portfolio built with Next.js, TypeScript and Tailwind CSS. Project content is maintained in `src/data/projects.ts`; five case studies are statically generated from a shared template.
+A static, editorial portfolio built with Next.js, TypeScript and Tailwind CSS. Project content is maintained in `src/data/projects.ts`; five case studies are statically generated from a shared template and published at [sharantejamedikar.github.io](https://sharantejamedikar.github.io).
 
 ## Local development
 
@@ -19,10 +19,10 @@ npx tsc --noEmit
 npm run build
 ```
 
-The production build has no required environment variables or external runtime services. Deploy to any Next.js-compatible Node.js host with `npm ci && npm run build`, then `npm start`. Set canonical and site URLs only after a production domain is confirmed.
+The production build exports static files to `out/`. Pushes to `main` deploy through the GitHub Pages workflow in `.github/workflows/deploy.yml`.
 
 ## Content notes
 
 - The approved general AI Engineering CV is served at `public/cv/sharan-teja-medikar-cv.pdf`.
 - Add repository or demo links only after confirming they are public and safe to share.
-- Set a canonical production URL during deployment; no portfolio domain is assumed.
+- Canonical, sitemap and robots URLs use `https://sharantejamedikar.github.io`.

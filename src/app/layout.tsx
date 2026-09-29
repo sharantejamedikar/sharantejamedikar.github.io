@@ -3,7 +3,7 @@ import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/nav";
 
-const siteUrl = "https://portfolio-mu-roan-71.vercel.app";
+const siteUrl = "https://sharantejamedikar.github.io";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,12 +19,12 @@ const instrument = Instrument_Serif({ variable: "--font-serif", subsets: ["latin
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: { default: "Sharan Teja Medikar — AI Engineer", template: "%s — Sharan Teja Medikar" },
-  description: "AI Engineer specialising in LLM systems, machine learning, computer vision and applied AI.",
-  keywords: ["AI Engineer", "LLM systems", "Machine Learning", "Computer Vision"],
+  description: "Early-career AI engineer building evaluated LLM, machine-learning, computer-vision and human-in-the-loop systems.",
+  keywords: ["AI Engineer", "Machine Learning Engineer", "Applied AI", "LLM systems", "Computer Vision"],
   authors: [{ name: "Sharan Teja Medikar" }],
   alternates: { canonical: "/" },
-  openGraph: { title: "Sharan Teja Medikar — AI Engineer", description: "Reliable AI systems, from models to deployment.", url: "/", siteName: "Sharan Teja Medikar", type: "website", locale: "en_GB" },
-  twitter: { card: "summary_large_image", title: "Sharan Teja Medikar — AI Engineer", description: "Reliable AI systems, from models to deployment." },
+  openGraph: { title: "Sharan Teja Medikar — AI Engineer", description: "Evaluated AI systems, from models to dependable software.", url: "/", siteName: "Sharan Teja Medikar", type: "website", locale: "en_GB" },
+  twitter: { card: "summary_large_image", title: "Sharan Teja Medikar — AI Engineer", description: "Evaluated AI systems, from models to dependable software." },
   robots: { index: true, follow: true },
 };
 

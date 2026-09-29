@@ -1,7 +1,8 @@
 import type { MetadataRoute } from "next";
 import { projects } from "@/data/projects";
 
-const siteUrl = "https://portfolio-mu-roan-71.vercel.app";
+const siteUrl = "https://sharantejamedikar.github.io";
+export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
