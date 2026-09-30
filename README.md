@@ -1,6 +1,6 @@
 # Sharan Teja Medikar — AI Engineer Portfolio
 
-A static, editorial portfolio built with Next.js, TypeScript and Tailwind CSS. Project content is maintained in `src/data/projects.ts`; five case studies are statically generated from a shared template and published at [sharantejamedikar.github.io](https://sharantejamedikar.github.io).
+A static, editorial portfolio built with Next.js, TypeScript and Tailwind CSS. Project content is maintained in `src/data/projects.ts`; ten evidence-led case studies are statically generated from a shared template and published at [sharantejamedikar.github.io](https://sharantejamedikar.github.io).
 
 ## Local development
 
