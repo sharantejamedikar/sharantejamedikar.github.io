@@ -23,9 +23,7 @@
 # misc
 .DS_Store
 *.pem
-/output/cv/*.aux
-/output/cv/*.log
-/output/cv/*.out
+/output/cv/
 
 # debug
 npm-debug.log*
