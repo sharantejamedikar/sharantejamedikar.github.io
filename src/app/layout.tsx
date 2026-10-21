@@ -5,6 +5,22 @@ import "./globals.css";
 import { Nav } from "@/components/nav";
 
 const siteUrl = "https://sharantejamedikar.github.io";
+const person = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Sharan Teja Medikar",
+  jobTitle: "AI Engineer",
+  url: `${siteUrl}/`,
+  sameAs: [
+    "https://www.linkedin.com/in/sharanteja",
+    "https://github.com/sharantejamedikar",
+  ],
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Guildford",
+    addressCountry: "United Kingdom",
+  },
+};
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,7 +52,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       data-scroll-behavior="smooth"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full"><a className="skip-link" href="#top">Skip to content</a><Nav/>{children}</body>
+      <body className="min-h-full"><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(person).replace(/</g, "\\u003c") }} /><a className="skip-link" href="#top">Skip to content</a><Nav/>{children}</body>
     </html>
   );
 }
