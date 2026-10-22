@@ -17,7 +17,7 @@ const person = {
   ],
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Guildford",
+    addressLocality: "London",
     addressCountry: "United Kingdom",
   },
 };
